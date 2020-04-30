@@ -5,11 +5,13 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] float dwellTime = 1f;
-    [SerializeField] List<Waypoint> path = new List<Waypoint>();
 
-    // Start is called before the first frame update
+    List<Waypoint> path;
+
     void Start()
     {
+        var pathfinder = FindObjectOfType<Pathfinder>();
+        path = pathfinder.FindPath() ?? new List<Waypoint>();
         StartCoroutine(FollowPath());
     }
 

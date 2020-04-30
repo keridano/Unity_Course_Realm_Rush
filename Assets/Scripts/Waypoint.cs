@@ -4,6 +4,9 @@ public class Waypoint : MonoBehaviour
 {
     const int gridSize = 10;
 
+    public bool isExplored;
+    public Waypoint exploredFrom;
+
     public Vector2Int GridPos
     {
         get
@@ -21,6 +24,12 @@ public class Waypoint : MonoBehaviour
         {
             return gridSize;
         }
+    }
+
+    public void SetTopColor(Color color)
+    {
+        var topMeshRenderer = transform.Find("Top Quad").GetComponent<MeshRenderer>();
+        topMeshRenderer.material.color = color;
     }
 
 }
