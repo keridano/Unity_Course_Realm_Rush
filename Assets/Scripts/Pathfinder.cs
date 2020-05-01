@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class Pathfinder : MonoBehaviour
 {
+#pragma warning disable 0649
     [SerializeField] Waypoint startWaypoint, endWaypoint;
+#pragma warning restore 0649
 
     bool isRunning = true;
 
@@ -24,7 +25,7 @@ public class Pathfinder : MonoBehaviour
     public List<Waypoint> FindPath()
     {
         LoadBlocks();
-        ColorStartAndEnd();
+        //ColorStartAndEnd();
         BreadthFirstSearch();
         CreatePath();
         return path;
@@ -43,11 +44,11 @@ public class Pathfinder : MonoBehaviour
         }
     }
 
-    private void ColorStartAndEnd()
-    {
-        startWaypoint.SetTopColor(Color.green);
-        endWaypoint.SetTopColor(Color.red);
-    }
+    //private void ColorStartAndEnd()
+    //{
+    //    startWaypoint.SetTopColor(Color.green);
+    //    endWaypoint.SetTopColor(Color.red);
+    //}
 
     private void BreadthFirstSearch()
     {

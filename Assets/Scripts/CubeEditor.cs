@@ -33,8 +33,11 @@ public class CubeEditor : MonoBehaviour
     {
         var labelText   = $"{waypoint.GridPos.x},{waypoint.GridPos.y}";
         var textMesh    = GetComponentInChildren<TextMesh>();
-        textMesh.text   = labelText;
-        gameObject.name = labelText;
+        if(textMesh != null)
+        {
+            textMesh.text   = labelText;
+            gameObject.name = labelText;
+        }
     }
 
 }
