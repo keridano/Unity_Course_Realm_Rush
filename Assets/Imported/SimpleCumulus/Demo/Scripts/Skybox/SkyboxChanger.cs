@@ -3,15 +3,11 @@ using UnityEngine.UI;
 
 public class SkyboxChanger : MonoBehaviour
 {
-    [SerializeField]
-    private Dropdown _dropdown;
+#pragma warning disable 0649
+    [SerializeField] private Dropdown _dropdown;
+#pragma warning restore 0649
 
     public Material[] Skyboxes;
-
-    //public void Awake()
-    //{
-    //    _dropdown = GetComponent<Dropdown>();
-    //}
 
     public void ChangeSkybox()
     {

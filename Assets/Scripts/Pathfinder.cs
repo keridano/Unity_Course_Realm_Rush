@@ -6,7 +6,6 @@ public class Pathfinder : MonoBehaviour
 #pragma warning disable 0649
     [SerializeField] Waypoint startWaypoint, endWaypoint;
 #pragma warning restore 0649
-
     bool isRunning = true;
 
     readonly List<Waypoint> path = new List<Waypoint>();
