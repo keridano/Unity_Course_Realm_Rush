@@ -4,18 +4,12 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    const float colliderSize = 7.5f;
-    const float colliderCenter = 7.5f;
-
     [Header("Death & Collisions")]
-
 #pragma warning disable 0649
     [SerializeField] GameObject deathFx;
-    [SerializeField] Transform parent;
 #pragma warning restore 0649
-
     [SerializeField] int scorePerHit = 5;
-    [SerializeField] int hits = 100;
+    [SerializeField] int hits = 80;
     bool isDying;
 
     [Header("Movement")]
@@ -24,17 +18,8 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        AddBoxCollider();
         SetupEnemyPath();
         StartCoroutine(FollowPath());
-    }
-
-    private void AddBoxCollider()
-    {
-        var boxCollider = gameObject.AddComponent<BoxCollider>();
-        boxCollider.center = new Vector3(0f, colliderCenter, 0f);
-        boxCollider.size = new Vector3(colliderSize, colliderSize, colliderSize);
-        boxCollider.isTrigger = false;
     }
 
     private void SetupEnemyPath()
@@ -57,7 +42,7 @@ public class Enemy : MonoBehaviour
     private void OnParticleCollision(GameObject other)
     {
         ProcessHit();
-        if (hits <= 1)
+        if (hits <= 0)
             KillEnemy();
     }
 
@@ -73,7 +58,7 @@ public class Enemy : MonoBehaviour
 
         isDying = true;
         var instantiatedFx = Instantiate(deathFx, transform.position, Quaternion.identity);
-        instantiatedFx.transform.parent = parent;
+        instantiatedFx.transform.parent = transform.parent;
         Destroy(gameObject);
     }
 }
