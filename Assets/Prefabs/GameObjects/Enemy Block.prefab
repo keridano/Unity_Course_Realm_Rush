@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 4214970757996965476}
   - component: {fileID: 1154180902751118045}
   m_Layer: 0
-  m_Name: 0,0
+  m_Name: Enemy Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -246,6 +246,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7ddad34878384cf3b525d985245a610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerPrefab: {fileID: 0}
+  isPlaceable: 1
   isExplored: 0
   exploredFrom: {fileID: 0}
 --- !u!1001 &731780581298522410

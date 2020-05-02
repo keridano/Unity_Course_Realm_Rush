@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     [Header("Death & Collisions")]
 #pragma warning disable 0649
     [SerializeField] GameObject deathFx;
+    [SerializeField] ParticleSystem hitParticle;
 #pragma warning restore 0649
     [SerializeField] int scorePerHit = 5;
     [SerializeField] int hits = 80;
@@ -50,6 +51,7 @@ public class Enemy : MonoBehaviour
     {
         //scoreBoard.ScoreHit(scorePerHit);
         hits--;
+        hitParticle.Play();
     }
 
     private void KillEnemy()
@@ -57,6 +59,7 @@ public class Enemy : MonoBehaviour
         if (isDying) return; //prevents multiple deathFX instances
 
         isDying = true;
+        hitParticle.Stop();
         var instantiatedFx = Instantiate(deathFx, transform.position, Quaternion.identity);
         instantiatedFx.transform.parent = transform.parent;
         Destroy(gameObject);

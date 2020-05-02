@@ -61,17 +61,23 @@ public class Pathfinder : MonoBehaviour
 
     private void CreatePath()
     {
-        path.Add(endWaypoint);
-        var previousWaypoint = endWaypoint.exploredFrom;
+        AddWaypointToPath(endWaypoint);
 
-        while(previousWaypoint != startWaypoint)
+        var previousWaypoint = endWaypoint.exploredFrom;
+        while (previousWaypoint != startWaypoint)
         {
-            path.Add(previousWaypoint);
+            AddWaypointToPath(previousWaypoint);
             previousWaypoint = previousWaypoint.exploredFrom;
         }
 
-        path.Add(startWaypoint);
+        AddWaypointToPath(startWaypoint);
         path.Reverse();
+    }
+
+    private void AddWaypointToPath(Waypoint waypoint)
+    {
+        path.Add(waypoint);
+        waypoint.isPlaceable = false; //No towers allowed on path
     }
 
     private void HaltIfEndFound()
