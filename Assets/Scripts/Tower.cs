@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
@@ -10,6 +9,8 @@ public class Tower : MonoBehaviour
 
     ParticleSystem towerGun;
     Transform targetEnemy;
+
+    public Waypoint CurrentBaseWaypoint { get; set; }
 
     void Start()
     {
