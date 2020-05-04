@@ -62,11 +62,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e994cb22bccb4229bb12cd2a63afe79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathFx: {fileID: 1929956291960174, guid: 1a51bfda454239a41afb7dee687c6ac0, type: 3}
+  deathFx: {fileID: 1929956291960174, guid: d1a105b12bb624a71ac9cd61a1c3b8f5, type: 3}
+  goalReachedFx: {fileID: 1929956291960174, guid: 1a51bfda454239a41afb7dee687c6ac0,
+    type: 3}
   hitParticle: {fileID: 7234530676796690328}
   scorePerHit: 5
   hits: 40
-  frequency: 1
+  frequency: 0.5
 --- !u!65 &609369952
 BoxCollider:
   m_ObjectHideFlags: 0

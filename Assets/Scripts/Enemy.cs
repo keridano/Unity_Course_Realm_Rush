@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     [Header("Death & Collisions")]
 #pragma warning disable 0649
     [SerializeField] GameObject deathFx;
+    [SerializeField] GameObject goalReachedFx;
     [SerializeField] ParticleSystem hitParticle;
 #pragma warning restore 0649
     [SerializeField] int scorePerHit = 5;
@@ -16,9 +17,11 @@ public class Enemy : MonoBehaviour
     [Header("Movement")]
     [SerializeField] float frequency = 1f;
     List<Waypoint> path;
+    EnemySpawner enemySpawner;
 
     void Start()
     {
+        enemySpawner = FindObjectOfType<EnemySpawner>();
         SetupEnemyPath();
         StartCoroutine(FollowPath());
     }
@@ -38,13 +41,15 @@ public class Enemy : MonoBehaviour
             transform.position = waypoint.transform.position;
             yield return new WaitForSeconds(frequency);
         }
+        print("Goal Reached");
+        KillEnemy(isGoalReached: true);
     }
 
     private void OnParticleCollision(GameObject other)
     {
         ProcessHit();
         if (hits <= 0)
-            KillEnemy();
+            KillEnemy(isGoalReached: false);
     }
 
     private void ProcessHit()
@@ -54,14 +59,15 @@ public class Enemy : MonoBehaviour
         hitParticle.Play();
     }
 
-    private void KillEnemy()
+    private void KillEnemy(bool isGoalReached)
     {
-        if (isDying) return; //prevents multiple deathFX instances
+        if (isDying) return; //prevents multiple particle instances
 
         isDying = true;
         hitParticle.Stop();
-        var instantiatedFx = Instantiate(deathFx, transform.position, Quaternion.identity);
+        var instantiatedFx = Instantiate(isGoalReached ? goalReachedFx : deathFx, transform.position, Quaternion.identity);
         instantiatedFx.transform.parent = transform.parent;
+        enemySpawner.UpdateScoreWhenEnemyKilled();
         Destroy(gameObject);
     }
 }

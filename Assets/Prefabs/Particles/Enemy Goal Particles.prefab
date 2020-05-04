@@ -4709,8 +4709,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b5fdbb1d0f5374cd9925eab0238603fa, type: 2}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: ffc90b05cffe44cf4a784da9d5b5235e, type: 2}
+  - {fileID: 2100000, guid: ffc90b05cffe44cf4a784da9d5b5235e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4766,7 +4766,7 @@ GameObject:
   - component: {fileID: 198215428582040142}
   - component: {fileID: 199113155619613730}
   m_Layer: 0
-  m_Name: Blue Spray
+  m_Name: White Spray
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9463,8 +9463,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 19814f35f21b5834ab03c4b11e23d923, type: 2}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 3555662f05cb52f4ea4679ed3cba2d66, type: 2}
+  - {fileID: 2100000, guid: 3555662f05cb52f4ea4679ed3cba2d66, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9520,7 +9520,7 @@ GameObject:
   - component: {fileID: 198579650134916736}
   - component: {fileID: 199901880920316678}
   m_Layer: 0
-  m_Name: White Spray
+  m_Name: Green Spray
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14217,8 +14217,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3555662f05cb52f4ea4679ed3cba2d66, type: 2}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 698534ef82aec4313a73c7214d92cfe6, type: 2}
+  - {fileID: 2100000, guid: 698534ef82aec4313a73c7214d92cfe6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14274,7 +14274,7 @@ GameObject:
   - component: {fileID: 198614261362037272}
   - component: {fileID: 199143583539381130}
   m_Layer: 0
-  m_Name: Blue Chunks
+  m_Name: Yellow Chunks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18971,8 +18971,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3a814b4e0cb3c4b7ba0d0fb88c3d3c93, type: 2}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 47f2af550e6064fe684be3f60406227d, type: 2}
+  - {fileID: 2100000, guid: 47f2af550e6064fe684be3f60406227d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19030,7 +19030,7 @@ GameObject:
   - component: {fileID: 6366725929766342992}
   - component: {fileID: 6454434430801639924}
   m_Layer: 0
-  m_Name: Enemy Death Particles
+  m_Name: Enemy Goal Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23786,10 +23786,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 262a1978a074d47438867464af16fa56, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 92468ad25c1e045c89bfcfc376f11bb5, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
-  m_Pitch: 0.5
+  m_Volume: 1
+  m_Pitch: 1.2
   Loop: 0
   Mute: 0
   Spatialize: 0
